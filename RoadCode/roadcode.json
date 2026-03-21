@@ -1,0 +1,25 @@
+{
+  "name": "BlackRoad-Media",
+  "org": "BlackRoad-OS-Inc",
+  "category": "media",
+  "title": "BlackRoad Media",
+  "deploy": {
+    "target": "gematria",
+    "path": "/var/www/blackroad/BlackRoad-Media",
+    "ssl": "auto",
+    "cdn": true
+  },
+  "mirrors": {
+    "gitea": "https://git.blackroad.io/BlackRoad-OS-Inc/BlackRoad-Media",
+    "github": "https://github.com/BlackRoad-OS-Inc/BlackRoad-Media"
+  },
+  "ci": {
+    "on_push": ["build", "deploy"],
+    "on_pr": ["lint", "audit"]
+  },
+  "monitoring": {
+    "uptime": true,
+    "analytics": "roadanalytics",
+    "alerts": "nats"
+  }
+}
